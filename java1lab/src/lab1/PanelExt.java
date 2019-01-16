@@ -1,20 +1,25 @@
-package lab1;
+package lab2;
 
 import java.awt.Graphics;
 
 import javax.swing.JPanel;
-
-public class PanelExt extends JPanel {
-	public static Exterm exterm;
+public class PanelPlane extends JPanel{
+	public static ITransport exterminator;
 	public static boolean initialization = false;
 	
-	@Override 
+	void setShip(ITransport transport) 
+	{
+        exterminator = transport;
+    }
+
+	
+	@Override  
 	public void paint(Graphics g) { 
 		super.paint(g); 
-		if(initialization) {
-			exterm.DrawExt(g);
+		if(exterminator != null) {
+			exterminator.DrawExterminator(g);
 		}
 	}
-
-
+	
+	
 }
